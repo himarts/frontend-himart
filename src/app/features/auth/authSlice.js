@@ -7,7 +7,7 @@ export const signup = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/signup",
+        "https://frontend-himart.onrender.com/users/signup",
         userData
       );
       return response.data; // Return user data if signup succeeds
@@ -25,7 +25,7 @@ export const login = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/login",
+        "https://frontend-himart.onrender.com/users/login",
         userData
       );
       const expirationTime = Date.now() + 3600000; // 1 hour from now

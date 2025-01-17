@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://frontend-himart.onrender.com";
 
 // export const postRequest = (path, data) => {
 //   return axios.post(`${_BASE_URL}${path}`, data, {
