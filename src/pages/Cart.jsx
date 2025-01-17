@@ -31,7 +31,7 @@ const Cart = () => {
 
   const createOrder = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/api/create-payment", {
+      const response = await axios.post("https://himart.onrender.com/api/create-payment", {
         items: cartList?.map((item) => ({
           name: item.productName || "Unknown Item",
           price: (parseFloat(item?.price) || 0).toFixed(2),
@@ -47,7 +47,7 @@ const Cart = () => {
 
   const onApprove = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/execute-payment", {
+      const response = await axios.post("https://himart.onrender.com/api/execute-payment", {
         orderId: data.orderID,
       });
 
@@ -154,7 +154,7 @@ const Cart = () => {
 </li>
 
                 </ul>
-                <PayPalScriptProvider options={{ "client-id": "AXXmcVftiBTqRaasKPGPlDT4HR1uAXIgIJSULutka2rqn64hVl7TyKGlbwujXixRZpxUKGVmlae98oGH" }}>
+                <PayPalScriptProvider options={{ "client-id": "AQb_0UzNydleMW8mgdr4_9s0r-QAMshT4wjnX3gxwYy3UULhjGsdgthWbMd7D-ORkH6RjciOETz1ZaSM" }}>
                   <PayPalButtons createOrder={createOrder} onApprove={onApprove} />
                 </PayPalScriptProvider>
               </div>
